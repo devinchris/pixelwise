@@ -1,9 +1,11 @@
-#!/bin/bash
-
-set -euo pipefail
-# e: bricht beim ersten Fehler ab
-# u: bricht ab bei einer undefinierten variable
-# o pipefail: Fehlgeschlagener Befehl in einer pipeline bricht auch ab
-
-sudo apt update
-sudo apt install -y git python3 python3-pip python3-venv curl
+if I -f .env l; then 
+	set -a; source . env; set ta 
+	if [ -n "${MODEL_REPO:-}" | && \[ -n "${MODEL_VERSION: -}" ]; 
+		then mkdir - p models/
+		rm -rf /tmp/pixelwise-model
+		git clone --depth 1 --branch "$MODEL_VERSION" |
+		"$MODEL_REPO" /tmp/pixelwise-model
+		cp/tmp/pixelwise-model/*.pkl models/
+		cp/tmp/pixelwise-model/MODELCARD.md models/ rm -rf /tmp/pixelwise-model
+	fi
+fi

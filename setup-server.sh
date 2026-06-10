@@ -1,3 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+sudo apt update
+sudo apt install -y git python3 python3-pip python3-venv curl
+
 if [ -f .env ]; then
     set -a; source .env; set +a
     if [ -n "${MODEL_REPO:-}" ] && \
